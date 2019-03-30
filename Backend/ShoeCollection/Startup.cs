@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ShoeCollection.Repositories;
 
 namespace ShoeCollection
 {
@@ -33,6 +34,9 @@ namespace ShoeCollection
             }));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDbContext<ShoeContext>();
+            services.AddScoped<IShoeBrandRepository, ShoeBrandRepository>();
+            services.AddScoped<IShoeTypeRepository, ShoeTypeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

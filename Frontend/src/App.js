@@ -1,24 +1,57 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import InputText from "./InputText";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      shoeType: ["Basketball", "Cross-Trainer", "Casual", "Running"],
-      shoeBrand: ["Nike", "Addidas", "Reebok", "New Balance"],
-      ImgPath: "",
-      shoeDescription: ""
+      shoeTypeName: [],
+      shoeBrandName: [],
+      brandImgPath: "",
+      shoeBrandInfo: "",
+      typeImagePath: "",
+      shoeTypeInfo: ""
     };
   }
-
-  setImage = newImageURL => {
-    this.setState({ ImgPath: newImageURL });
+  setTypeName = newTypeName => {
+    this.setState({ shoeTypeName: newTypeName });
+  };
+  setBrandName = newBrandName => {
+    this.setState({ shoeBrandName: newBrandName });
+  };
+  setBrandImgPath = newBrandImagePath => {
+    this.setState({ brandImgPath: newBrandImagePath });
+  };
+  setBrandInfo = newBrandInfo => {
+    this.setState({ shoeBrandInfo: newBrandInfo });
+  };
+  setTypeImgPath = newTypeImagePath => {
+    this.setState({ typeImagePath: newTypeImagePath });
+  };
+  setTypeInfo = newTypeInfo => {
+    this.setState({ shoeTypeInfo: newTypeInfo });
   };
 
   render() {
-    return <div> </div>;
+    return (
+      <div>
+        <InputText
+          shoeTypeName={this.state.shoeTypeName}
+          shoeBrandName={this.state.shoeBrandName}
+          brandImgPath={this.state.brandImgPath}
+          shoeBrandInfo={this.state.shoeBrandInfo}
+          typeImagePath={this.state.typeImagePath}
+          shoeTypeInfo={this.state.shoeTypeInfo}
+          setTypeName={this.setTypeName}
+          setBrandName={this.setBrandName}
+          setBrandImgPath={this.setBrandImgPath}
+          setBrandInfo={this.setBrandInfo}
+          setTypeImgPath={this.setTypeImgPath}
+          setTypeInfo={this.setTypeInfo}
+        />
+      </div>
+    );
   }
 }
 

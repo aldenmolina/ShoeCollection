@@ -15,39 +15,32 @@ namespace ShoeCollection.Repositories
             this.db = db;
         }
 
-        public ShoeBrand GetById(int id)
+        public ShoeType GetById(int id)
         {
-            return db.ShoeBrands.Single(shoeBrand => shoeBrand.ShoeBrandId == id);
+            return db.ShoesTypes.Single(shoeType => shoeType.ShoeTypeId == id);
         }
 
-        public List<ShoeBrand> GetAll()
+        public void Create(ShoeType newShoeType)
         {
-            return db.ShoeBrands.ToList();
+            db.ShoesTypes.Add(newShoeType);
+            db.SaveChanges();
         }
 
-        List<ShoeType> IShoeTypeRepository.GetAll()
+        public void Delete(ShoeType newShoeType)
         {
-            throw new NotImplementedException();
+            db.ShoesTypes.Remove(newShoeType);
+            db.SaveChanges();
         }
 
-        ShoeType IShoeTypeRepository.GetById(int id)
+        public void Update(ShoeType newShoeType)
         {
-            throw new NotImplementedException();
+            db.ShoesTypes.Update(newShoeType);
+            db.SaveChanges();
         }
 
-        void IShoeTypeRepository.Create(ShoeType newShoeType)
+        public List<ShoeType> GetAll()
         {
-            throw new NotImplementedException();
-        }
-
-        void IShoeTypeRepository.Delete(ShoeType newShoeType)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IShoeTypeRepository.Update(ShoeType newShoeType)
-        {
-            throw new NotImplementedException();
+            return db.ShoesTypes.ToList();
         }
     }
 }

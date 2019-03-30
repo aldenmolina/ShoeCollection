@@ -13,9 +13,9 @@ namespace ShoeCollection.Controllers
     [ApiController]
     public class ShoeBrandController : ControllerBase
     {
-        public ShoeBrandRepository shoesRepo;
+        public IShoeBrandRepository shoesRepo;
 
-        public ShoeBrandController(ShoeBrandRepository shoesRepo)
+        public ShoeBrandController(IShoeBrandRepository shoesRepo)
         {
             this.shoesRepo = shoesRepo;
         }
@@ -23,7 +23,7 @@ namespace ShoeCollection.Controllers
         [HttpGet]
         public ActionResult<List<ShoeBrand>> Get()
         {
-            return shoesRepo.GetAll(); ;
+            return shoesRepo.GetAll();
         }
 
         [HttpPost]
@@ -32,5 +32,35 @@ namespace ShoeCollection.Controllers
             shoesRepo.Create(newShoeBrands);
             return true;
         }
+
+        //[HttpGet]
+        //public ShoeBrand Delete(int id)
+        //{
+        //    var model = shoesRepo.GetById(id);
+        //    return model;
+        //}
+
+        //[HttpPost]
+        //public ActionResult<bool> Delete([FromBody] ShoeBrand shoeBrand)
+        //{
+
+        //    shoesRepo.Delete(shoeBrand);
+        //    return true;
+        //}
+
+        //[HttpGet]
+        //public ShoeBrand Update(int id)
+        //{
+        //    var model = shoesRepo.GetById(id);
+        //    return model;
+        //}
+
+        //[HttpPost]
+        //public ActionResult<bool> Update(ShoeBrand shoeBrand)
+        //{
+        //    shoesRepo.Update(shoeBrand);
+        //    return true;
+        //}
+
     }
 }

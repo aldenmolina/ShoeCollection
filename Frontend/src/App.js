@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import InputText from "./InputText";
+import ShoeCollection from "./ShoeCollection";
 
 class App extends Component {
   constructor() {
@@ -11,9 +12,17 @@ class App extends Component {
       brandImgPath: "",
       shoeBrandInfo: "",
       typeImagePath: "",
-      shoeTypeInfo: ""
+      shoeTypeInfo: "",
+      shoeCollection: [{}]
     };
   }
+
+  componentDidMount() {
+    fetch("https://localhost:44355/api/shoetype")
+      .then(res => res.json())
+      .then(json => this.setState({ createdMemes: json }));
+  }
+
   setTypeName = newTypeName => {
     this.setState({ shoeTypeName: newTypeName });
   };
@@ -50,6 +59,7 @@ class App extends Component {
           setTypeImgPath={this.setTypeImgPath}
           setTypeInfo={this.setTypeInfo}
         />
+        <ShoeCollection shoeCollection={this.state.shoeCollection} />
       </div>
     );
   }

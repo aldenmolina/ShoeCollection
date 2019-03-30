@@ -8,17 +8,14 @@ class App extends Component {
     super();
     this.state = {
       shoeTypeName: [],
-      shoeBrandName: [],
-      brandImgPath: "",
-      shoeBrandInfo: "",
-      typeImagePath: "",
-      shoeTypeInfo: "",
+      shoeName: [],
+      shoeDescription: "",
       shoeType: []
     };
   }
 
   componentDidMount() {
-    fetch("https://localhost:44355/api/shoetype")
+    fetch("https://localhost:44382/api/shoetype")
       .then(res => res.json())
       .then(json => this.setState({ shoeType: json }));
   }
@@ -26,20 +23,16 @@ class App extends Component {
   setTypeName = newTypeName => {
     this.setState({ shoeTypeName: newTypeName });
   };
-  setBrandName = newBrandName => {
-    this.setState({ shoeBrandName: newBrandName });
+  setName = newName => {
+    this.setState({ shoeName: newName });
   };
-  setBrandImgPath = newBrandImagePath => {
-    this.setState({ brandImgPath: newBrandImagePath });
+
+  setDescription = newDescription => {
+    this.setState({ shoeDescription: newDescription });
   };
-  setBrandInfo = newBrandInfo => {
-    this.setState({ shoeBrandInfo: newBrandInfo });
-  };
-  setTypeImgPath = newTypeImagePath => {
-    this.setState({ typeImagePath: newTypeImagePath });
-  };
-  setTypeInfo = newTypeInfo => {
-    this.setState({ shoeTypeInfo: newTypeInfo });
+
+  setType = newType => {
+    this.setState({ shoeType: newType });
   };
 
   render() {
@@ -51,16 +44,10 @@ class App extends Component {
         <InputText
           shoeTypeName={this.state.shoeTypeName}
           shoeBrandName={this.state.shoeBrandName}
-          brandImgPath={this.state.brandImgPath}
-          shoeBrandInfo={this.state.shoeBrandInfo}
-          typeImagePath={this.state.typeImagePath}
-          shoeTypeInfo={this.state.shoeTypeInfo}
+          shoeDescription={this.state.shoeDescription}
           setTypeName={this.setTypeName}
-          setBrandName={this.setBrandName}
-          setBrandImgPath={this.setBrandImgPath}
-          setBrandInfo={this.setBrandInfo}
-          setTypeImgPath={this.setTypeImgPath}
-          setTypeInfo={this.setTypeInfo}
+          setName={this.setName}
+          setDescription={this.setDescription}
         />
         <ul>{listTypes}</ul>
       </div>

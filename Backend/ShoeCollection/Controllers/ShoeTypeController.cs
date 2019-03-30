@@ -32,5 +32,33 @@ namespace ShoeCollection.Controllers
             shoesTypeRepo.Create(newShoeType);
             return true;
         }
+
+        [HttpGet]
+        public ShoeType Delete(int id)
+        {
+            var model = shoesTypeRepo.GetById(id);
+            return model;
+        }
+
+        [HttpPost]
+        public ActionResult<bool> Delete([FromBody] ShoeType shoeType)
+        {
+            shoesTypeRepo.Delete(shoeType);
+            return true;
+        }
+
+        [HttpGet]
+        public ShoeType Update(int id)
+        {
+            var model = shoesTypeRepo.GetById(id);
+            return model;
+        }
+
+        [HttpPost]
+        public ActionResult<bool> Update(ShoeType shoeType)
+        {
+            shoesTypeRepo.Update(shoeType);
+            return true;
+        }
     }
 }

@@ -8,7 +8,6 @@ namespace ShoeCollection.Repositories
 {
     public interface IShoeBrandRepository
     {
-        List<ShoeBrand> GetAll();
         ShoeBrand GetById(int id);
         void Create(ShoeBrand newShoeBrand);
         void Delete(ShoeBrand newShoeBrand);

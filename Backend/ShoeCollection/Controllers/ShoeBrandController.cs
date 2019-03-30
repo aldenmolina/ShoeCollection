@@ -13,23 +13,39 @@ namespace ShoeCollection.Controllers
     [ApiController]
     public class ShoeBrandController : ControllerBase
     {
-        public ShoeBrandRepository shoesRepo;
-
+        IShoeBrandRepository shoesRepo;
         public ShoeBrandController(ShoeBrandRepository shoesRepo)
         {
             this.shoesRepo = shoesRepo;
         }
 
-        [HttpGet]
-        public ActionResult<List<ShoeBrand>> Get()
+        [HttpGet("{id}")]
+        public ActionResult<ShoeBrand> Get(int id)
         {
-            return shoesRepo.GetAll(); ;
+            var shoeBrand = shoesRepo.GetById(id);
+
+            return shoeBrand;
         }
 
         [HttpPost]
         public ActionResult<bool> Post([FromBody] ShoeBrand newShoeBrands)
         {
             shoesRepo.Create(newShoeBrands);
+            return true;
+        }
+
+        [HttpPost("{id}")]
+        public ActionResult<bool> Post(int id, [FromBody] ShoeBrand shoeBrand)
+        {
+            shoesRepo.Update(shoeBrand);
+            return true;
+        }
+
+        [HttpPost("{id}")]
+        public ActionResult<bool> Post(int id)
+        {
+            var shoeBrand = shoesRepo.GetById(id);
+            shoesRepo.Delete(shoeBrand);
             return true;
         }
     }

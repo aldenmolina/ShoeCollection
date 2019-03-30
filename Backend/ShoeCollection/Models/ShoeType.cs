@@ -14,6 +14,6 @@ namespace ShoeCollection.Models
         public string TypeImagePath { get; set; }
         public string ShoeTypeInfo { get; set; }
 
-        public virtual List<ShoeBrand> ShoeBrands { get; set; }
+        public virtual IEnumerable<ShoeBrand> ShoeBrands { get; set; }
     }
 }

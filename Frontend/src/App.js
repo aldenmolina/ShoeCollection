@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import InputText from "./InputText";
-import ShoeCollection from "./ShoeCollection";
+import ShoeType from "./ShoeType";
 
 class App extends Component {
   constructor() {
@@ -13,14 +13,14 @@ class App extends Component {
       shoeBrandInfo: "",
       typeImagePath: "",
       shoeTypeInfo: "",
-      shoeCollection: [{}]
+      shoeType: []
     };
   }
 
   componentDidMount() {
     fetch("https://localhost:44355/api/shoetype")
       .then(res => res.json())
-      .then(json => this.setState({ createdMemes: json }));
+      .then(json => this.setState({ shoeType: json }));
   }
 
   setTypeName = newTypeName => {
@@ -43,6 +43,9 @@ class App extends Component {
   };
 
   render() {
+    const listTypes = this.state.shoeType.map(item => (
+      <ShoeType shoeTypeId={item.shoeTypeId} shoeType={this.state.shoeType} />
+    ));
     return (
       <div>
         <InputText
@@ -59,7 +62,7 @@ class App extends Component {
           setTypeImgPath={this.setTypeImgPath}
           setTypeInfo={this.setTypeInfo}
         />
-        <ShoeCollection shoeCollection={this.state.shoeCollection} />
+        <ul>{listTypes}</ul>
       </div>
     );
   }

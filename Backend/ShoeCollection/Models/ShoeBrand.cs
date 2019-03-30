@@ -18,8 +18,7 @@ namespace ShoeCollection.Models
 
         public int ShoeTypeId { get; set; }
 
-        public virtual ShoeType ShoeType { get; set;
-        }
+        public virtual ShoeType ShoeType { get; set; }
 
         public string ShoeBrandName { get; set; }
 

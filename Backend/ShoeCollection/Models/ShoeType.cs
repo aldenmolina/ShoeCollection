@@ -10,8 +10,8 @@ namespace ShoeCollection.Models
     {
         [Key]
         public int ShoeTypeId { get; set; }
-        public String ShoeTypeName { get; set; }
-        public String TypeImagePath { get; set; }
+        public string ShoeTypeName { get; set; }
+        public string TypeImagePath { get; set; }
         public string ShoeTypeInfo { get; set; }
 
         public virtual List<ShoeBrand> ShoeBrands { get; set; }

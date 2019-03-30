@@ -12879,11 +12879,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\WeCanCodeIT\\source\\shoe-collection\\Backend\\ShoeCollection\\ShoeCollection.csproj",
+      "projectUniqueName": "C:\\Users\\WeCanCodeIT\\source\\ShoeCollection\\Backend\\ShoeCollection\\ShoeCollection.csproj",
       "projectName": "ShoeCollection",
-      "projectPath": "C:\\Users\\WeCanCodeIT\\source\\shoe-collection\\Backend\\ShoeCollection\\ShoeCollection.csproj",
+      "projectPath": "C:\\Users\\WeCanCodeIT\\source\\ShoeCollection\\Backend\\ShoeCollection\\ShoeCollection.csproj",
       "packagesPath": "C:\\Users\\WeCanCodeIT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\WeCanCodeIT\\source\\shoe-collection\\Backend\\ShoeCollection\\obj\\",
+      "outputPath": "C:\\Users\\WeCanCodeIT\\source\\ShoeCollection\\Backend\\ShoeCollection\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

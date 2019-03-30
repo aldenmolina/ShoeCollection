@@ -26,3 +26,17 @@ C:\Users\WeCanCodeIT\source\shoe-collection\Backend\ShoeCollection\obj\Debug\net
 C:\Users\WeCanCodeIT\source\shoe-collection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.RazorTargetAssemblyInfo.cache
 C:\Users\WeCanCodeIT\source\shoe-collection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.dll
 C:\Users\WeCanCodeIT\source\shoe-collection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.pdb
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\bin\Debug\netcoreapp2.1\ShoeCollection.deps.json
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\bin\Debug\netcoreapp2.1\ShoeCollection.runtimeconfig.json
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\bin\Debug\netcoreapp2.1\ShoeCollection.runtimeconfig.dev.json
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\bin\Debug\netcoreapp2.1\ShoeCollection.dll
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\bin\Debug\netcoreapp2.1\ShoeCollection.pdb
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.csprojAssemblyReference.cache
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.csproj.CoreCompileInputs.cache
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.RazorAssemblyInfo.cache
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.RazorAssemblyInfo.cs
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.AssemblyInfoInputs.cache
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.AssemblyInfo.cs
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.RazorTargetAssemblyInfo.cache
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.dll
+C:\Users\WeCanCodeIT\source\ShoeCollection\Backend\ShoeCollection\obj\Debug\netcoreapp2.1\ShoeCollection.pdb

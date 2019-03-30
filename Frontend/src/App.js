@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import InputText from "./InputText";
-import ShoeType from "./ShoeType";
+import Shoes from "./Shoes";
 
 class App extends Component {
   constructor() {
@@ -10,14 +10,14 @@ class App extends Component {
       shoeTypeName: [],
       shoeName: [],
       shoeDescription: "",
-      shoeType: []
+      shoes: [{}]
     };
   }
 
   componentDidMount() {
     fetch("https://localhost:44382/api/shoetype")
       .then(res => res.json())
-      .then(json => this.setState({ shoeType: json }));
+      .then(json => this.setState({ shoes: json }));
   }
 
   setTypeName = newTypeName => {
@@ -36,9 +36,6 @@ class App extends Component {
   };
 
   render() {
-    const listTypes = this.state.shoeType.map(item => (
-      <ShoeType shoeTypeId={item.shoeTypeId} shoeType={this.state.shoeType} />
-    ));
     return (
       <div>
         <InputText
@@ -49,7 +46,7 @@ class App extends Component {
           setName={this.setName}
           setDescription={this.setDescription}
         />
-        <ul>{listTypes}</ul>
+        <Shoes shoes={this.state.shoes} />
       </div>
     );
   }

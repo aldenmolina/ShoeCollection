@@ -11,11 +11,11 @@ namespace ShoeCollection.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ShoeController : ControllerBase
+    public class ShoeBrandController : ControllerBase
     {
         public ShoeBrandRepository shoesRepo;
 
-        public ShoeController(ShoeBrandRepository shoesRepo)
+        public ShoeBrandController(ShoeBrandRepository shoesRepo)
         {
             this.shoesRepo = shoesRepo;
         }
@@ -27,9 +27,9 @@ namespace ShoeCollection.Controllers
         }
 
         [HttpPost]
-        public ActionResult<bool> Post([FromBody] ShoeBrand shoeBrands)
+        public ActionResult<bool> Post([FromBody] ShoeBrand newShoeBrands)
         {
-            shoesRepo.Create(ShoeBrand);
+            shoesRepo.Create(newShoeBrands);
             return true;
         }
     }

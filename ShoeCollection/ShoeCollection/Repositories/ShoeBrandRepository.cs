@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShoeCollection.Repositories
 {
-    public class ShoeBrandRepository
+    public class ShoeBrandRepository : IShoeBrandRepository
     {
         private ShoeContext db;
 
@@ -17,12 +17,24 @@ namespace ShoeCollection.Repositories
 
         public ShoeBrand GetById(int id)
         {
-            return db.Shoes.Single(shoeBrand => shoeBrand.ShoeBrandId == id);
+            return db.ShoeBrands.Single(shoeBrand => shoeBrand.ShoeBrandId == id);
         }
 
         public void Create(ShoeBrand newShoeBrand)
         {
-            db.shoeBrands.Add(newShoeBrand);
+            db.ShoeBrands.Add(newShoeBrand);
+            db.SaveChanges();
+        }
+
+        public void Delete(ShoeBrand newShoeBrand)
+        {
+            db.ShoeBrands.Remove(newShoeBrand);
+            db.SaveChanges();
+        }
+
+        public void Update(ShoeBrand newShoeBrand)
+        {
+            db.ShoeBrands.Update(newShoeBrand);
             db.SaveChanges();
         }
 

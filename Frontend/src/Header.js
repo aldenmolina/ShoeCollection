@@ -9,10 +9,8 @@ class Header extends Component {
           } = this.props;
 
         return (
-            <header style={backgroundStyle} className="header">
-            <div className="header__container"></div>
-            <div className="header--fadeBottom"></div>
-          </header>
+            <header style={backgroundStyle} className="header">   
+            </header>
         );
     }
 }

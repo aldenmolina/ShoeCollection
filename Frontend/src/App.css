@@ -1,4 +1,114 @@
-.App {
+@import 'https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+
+body {
+	background: #221f1f;
+	color: #ffffff;
+	font-family: 'Lato', sans-serif;
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.4;
+	margin-bottom: 1em;
+}
+
+p {
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 1.6;
+	margin-bottom: 1em;
+}
+
+@mixin generate-gradient($color,$amount) {
+	background: -moz-linear-gradient(top, rgba($color,$amount) 0%, rgba($color,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba($color,$amount) 0%,rgba($color,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba($color,$amount) 0%,rgba($color,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
+.Header {
+	@include generate-gradient(#000000, 1);
+	display: flex;
+	padding: 40px ;
+	position: fixed;
+	top: 0;
+	left: 0;
+  width: 100vw;
+  height: 15vh;
+	box-sizing: border-box;
+	z-index: 5;
+}
+
+.logo {
+	width: 200px;
+	height: 75px;
+  margin-right: 10px;
+  border-radius: 25px;
+	transition: margin .125s ease;
+}
+
+	/* svg {
+		transform: scale(.5);
+		transform-origin: 0 0;
+		
+		path {
+			fill: #e50914;
+			transition: fill .125s ease;
+    } */
+    
+.Hero {
+      width: 100%;
+      position: relative;
+      background-size: cover;
+      min-height: 800px;
+}
+      
+.content {
+        position: relative;
+        z-index: 4;
+        width: 500px;
+        left: 8vw;
+        top: 12vw;
+}  
+	
+.logo:hover {
+		cursor: pointer;
+		margin-top: 2px;
+	  fill: #ffffff;
+}
+
+.navigation ul {
+		display: flex;
+		height: 37px;
+		align-items: center;
+    padding: 0 10px;
+  }
+
+.navigation li {
+			font-weight: 400;
+			padding: 7px 10px;
+			font-size: 14px;
+			transition: background .125s ease;
+      border-radius: 3px;
+    }
+
+.navigation li:hover {
+	background: #e50914;
+				cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -29,5 +139,5 @@
   }
   to {
     transform: rotate(360deg);
-  }
-}
+  } */
+

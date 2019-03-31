@@ -14,6 +14,9 @@ namespace shoeCollection.Models
         public int ShoeTypeId { get; set; }
 
         public string ShoeName { get; set; }
+
+        public string ImagePath { get; set; }
+
         public string Description { get; set; }
     }
 }

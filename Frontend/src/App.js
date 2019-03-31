@@ -7,6 +7,7 @@ import Logo from "./Logo";
 import Hero from "./Hero";
 
 
+
 class App extends Component {
   constructor() {
     super();
@@ -48,12 +49,12 @@ class App extends Component {
     return (
         <div>
             <header className = "Header">
-              {/* <Logo />           */}
+              <Logo />          
               <Navigation />
             </header>
-            <div>
+            
              <Hero />
-             </div>
+          
         {/* // <InputText
         //   shoeTypeName={this.state.shoeTypeName}
         //   shoeBrandName={this.state.shoeBrandName}
@@ -62,8 +63,9 @@ class App extends Component {
         //   setName={this.setName}
         //   setDescription={this.setDescription}
         // /> */}
-    
-          {/* {shoeList} */}
+            <div>
+          {shoeList}
+          </div>
         </div>
     );
   }

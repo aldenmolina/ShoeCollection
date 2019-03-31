@@ -2,10 +2,11 @@ import React, { Component } from "react";
 
 class ShoeItem extends Component {
   render() {
-    const { shoeName, description } = this.props;
+    const { shoeName, imagePath, description } = this.props;
     return (
       <div>
         <h4>{shoeName}</h4>
+        <img src={imagePath} />
         <p>{description}</p>
       </div>
     );

@@ -5,7 +5,7 @@ class Shoes extends Component {
   render() {
     const { shoeBrands, shoeTypeName } = this.props;
     const shoeItems = shoeBrands.map(item => (
-      <ShoeItem shoeName={item.shoeName} description={item.description} />
+      <ShoeItem shoeName={item.shoeName} imagePath={item.imagePath} description={item.description} />
     ));
     return (
       <div>

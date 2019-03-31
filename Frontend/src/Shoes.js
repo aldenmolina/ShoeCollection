@@ -1,14 +1,18 @@
 import React, { Component } from "react";
+import ShoeItem from "./ShoeItem";
 
 class Shoes extends Component {
   render() {
-    const { shoes } = this.props;
-    const shoeList = shoes.map(item => (
-      <li>
-        <p>{item.shoeTypeName}</p>
-      </li>
+    const { shoeBrands, shoeTypeName } = this.props;
+    const shoeItems = shoeBrands.map(item => (
+      <ShoeItem shoeName={item.shoeName} description={item.description} />
     ));
-    return <ul>{shoeList}</ul>;
+    return (
+      <div>
+        <h2>{shoeTypeName}</h2>
+        {shoeItems}
+      </div>
+    );
   }
 }
 

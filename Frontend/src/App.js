@@ -10,7 +10,7 @@ class App extends Component {
       shoeTypeName: [],
       shoeName: [],
       shoeDescription: "",
-      shoes: [{}]
+      shoes: []
     };
   }
 
@@ -36,6 +36,9 @@ class App extends Component {
   };
 
   render() {
+    const shoeList = this.state.shoes.map(item => (
+      <Shoes shoeBrands={item.shoeBrands} shoeTypeName={item.shoeTypeName} />
+    ));
     return (
       <div>
         <InputText
@@ -46,7 +49,7 @@ class App extends Component {
           setName={this.setName}
           setDescription={this.setDescription}
         />
-        <Shoes shoes={this.state.shoes} />
+        {shoeList}
       </div>
     );
   }

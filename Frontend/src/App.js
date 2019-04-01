@@ -63,39 +63,40 @@ class App extends Component {
     this.setState({ description: newText });
   };
 
-  // updateShoeType = (newShoeId, newShoeTypeId, newImagePath, newDescription) => {
-  //   const newShoe = {
-  //     shoeTypeName: this.state.shoeTypeName,
-  //     shoeId: newShoeId,
-  //     shoeTypeId: newShoeTypeId,
-  //     ImagePath: newImagePath,
-  //     Description: newDescription
-  //   };
-  //   fetch("https://localhost:44382/api/shoe/" + newShoeId, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify(newShoe)
-  //   }).then(res => {
-  //     if (res.ok) {
-  //       const shoeTypeIndex = newShoeTypeId - 1;
-  //       const updateShoe = [...this.state.shoeType[shoeTypeIndex].shoeBrands];
-  //       let previousShoe = 0;
-  //       updateShoe.forEach((shoe, index) => {
-  //         if (shoe.shoeId === newShoeId) {
-  //           previousShoe = index;
-  //         }
-  //       }),
-  //         (updateShoe[previousShoe] = newShoe);
-  //       const updateShoeType = this.state.shoeType[shoeTypeIndex];
-  //       updateShoeType.shoeBrands = updateShoe;
-  //       const newShoeType = this.state.shoeType;
-  //       newShoeType[shoeTypeIndex] = updateShoeType;
-  //       this.setState({ shoeType: newShoeType });
-  //     }
-  //   });
-  // };
+  updateShoe = (newShoeId, newShoeTypeId) => {
+    const newShoe = {
+      shoeId: newShoeId,
+      shoeTypeId: newShoeTypeId,
+      shoeName: this.state.shoeName,
+      imagePath: this.state.imagePath,
+      description: this.state.description
+    };
+    const url = "https://localhost:44382/api/shoe/" + newShoeId;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newShoe)
+    }).then(res => {
+      if (res.ok) {
+        const shoeTypeIndex = newShoeTypeId - 1;
+        const newShoes = [...this.state.shoeType[shoeTypeIndex].shoeBrands];
+        let shoePlacer = 0;
+        newShoes.forEach((shoe, index) => {
+          if (shoe.shoeId === newShoeId) {
+            shoePlacer = index;
+          }
+        });
+        newShoes[shoePlacer] = newShoe;
+        const newShoeType = this.state.shoeType[shoeTypeIndex];
+        newShoeType.shoeBrands = newShoes;
+        const newShoeTypes = this.state.shoeType;
+        newShoeTypes[shoeTypeIndex] = newShoeType;
+        this.setState({ shoeType: newShoeType });
+      }
+    });
+  };
 
   render() {
     const shoeList = this.state.shoes.map(item => (
@@ -110,6 +111,7 @@ class App extends Component {
         setDescription={this.setDescription}
         shoeNameText={this.shoeName}
         addNewShoe={this.addNewShoe}
+        updateShoe={this.updateShoe}
       />
     ));
     return (
@@ -121,15 +123,6 @@ class App extends Component {
           <Hero />
         </div>
         <div className="main-2">{shoeList}</div>
-
-        {/* // <InputText
-        //   shoeTypeName={this.state.shoeTypeName}
-        //   shoeBrandName={this.state.shoeBrandName}
-        //   shoeDescription={this.state.shoeDescription}
-        //   setTypeName={this.setTypeName}
-        //   setName={this.setName}
-        //   setDescription={this.setDescription}
-        // /> */}
       </div>
     );
   }

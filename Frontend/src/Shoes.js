@@ -26,6 +26,7 @@ class Shoes extends Component {
       <ShoeItem
         shoe={item}
         shoeId={item.shoeId}
+        shoeTypeId={item.shoeTypeId}
         shoeName={item.shoeName}
         imagePath={item.imagePath}
         description={item.description}
@@ -33,6 +34,7 @@ class Shoes extends Component {
         onShoeNameChange={this.onShoeNameChange}
         onImageChange={this.onImageChange}
         onDescriptionChange={this.context}
+        updateShoe={this.props.updateShoe}
       />
     ));
     return (
@@ -44,7 +46,6 @@ class Shoes extends Component {
             <div>
               <label>Name: </label>
               <input
-                className={`add-name${this.props.shoeTypeId}`}
                 type="text"
                 value={shoeNameText}
                 onChange={this.onShoeNameChange}
@@ -53,7 +54,6 @@ class Shoes extends Component {
             <div>
               <label>Image URL:</label>
               <input
-                className={`add-form${this.props.shoeTypeId}`}
                 type="text"
                 value={imagePath}
                 onChange={this.onImageChange}
@@ -62,7 +62,6 @@ class Shoes extends Component {
             <div>
               <label>Description: </label>
               <input
-                className={`add-form${this.props.shoeTypeId}`}
                 type="text"
                 value={description}
                 onChange={this.onDescriptionChange}

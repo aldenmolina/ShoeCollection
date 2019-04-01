@@ -13,17 +13,19 @@ namespace shoeCollection.Controllers
     [ApiController]
     public class ShoeTypeController : ControllerBase
     {
-        public ShoeTypeRepository shoeTypeRepo;
+        IShoeTypeRepository repo;
 
-        public ShoeTypeController(ShoeTypeRepository shoeTypeRepo)
+        public ShoeTypeController(IShoeTypeRepository repo)
         {
-            this.shoeTypeRepo = shoeTypeRepo;
+            this.repo = repo;
         }
 
         [HttpGet]
         public ActionResult<List<ShoeType>> Get()
         {
-            return shoeTypeRepo.GetAll(); ;
+            var shoeTypeList = repo.GetAll().ToList();
+
+            return shoeTypeList ;
         }
 
         [HttpPost]

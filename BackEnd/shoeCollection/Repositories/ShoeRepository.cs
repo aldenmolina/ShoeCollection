@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace shoeCollection.Repositories
 {
-    public class ShoeRepository
+    public class ShoeRepository : IShoeRepository
     {
         ShoeContext db;
         public ShoeRepository(ShoeContext db)
@@ -22,7 +22,7 @@ namespace shoeCollection.Repositories
 
         public Shoe GetById(int showId)
         {
-            return db.Shoes.Single(show => show.ShoeId == showId);
+            return db.Shoes.Single(shoe => shoe.ShoeId == shoeId);
         }
 
         public void Update(Shoe shoe)

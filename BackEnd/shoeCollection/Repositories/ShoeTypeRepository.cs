@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace shoeCollection.Repositories
 {
-    public class ShoeTypeRepository
+    public class ShoeTypeRepository : IShoeTypeRepository
     {
-        private ShoeContext db;
+        ShoeContext db;
 
-        public ShoeTypeRepository(ShoeContext db)
+        public ShoeTypeRepository (ShoeContext db)
         {
             this.db = db;
         }
@@ -30,5 +30,7 @@ namespace shoeCollection.Repositories
         {
             return db.ShoeTypes.ToList();
         }
+
+       
     }
 }

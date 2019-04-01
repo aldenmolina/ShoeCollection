@@ -1,10 +1,16 @@
 @import 'https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
 
-body {
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
+}
+
+/* body {
 	background: #221f1f;
 	color: #ffffff;
 	font-family: 'Lato', sans-serif;
-}
+} */
 
 h2 {
 	font-size: 24px;
@@ -29,7 +35,7 @@ p {
 
 .Header {
 	@include generate-gradient(#000000, 1);
-	display: flex;
+	display: inline-block;
 	padding: 40px ;
 	position: fixed;
 	top: 0;
@@ -42,25 +48,31 @@ p {
 
 .logo {
 	width: 200px;
-	height: 75px;
-  margin-right: 25px;
+	height: 100px;
+  margin-Left: 5px;
   border-radius: 25px;
-	transition: margin .125s ease;
+  transition: margin .125s ease;
+  z-index: 4;
 }
 
 .Hero {
       width: 100%;
       position: relative;
       background-size: cover;
-      min-height: 800px;
+      min-height: 700px;
+      margin: auto;
+      padding-bottom: 25px;
 }
       
-.content {
-        position: relative;
+span {
+        position: absolute;
         z-index: 4;
-        width: 500px;
-        left: 8vw;
-        top: 12vw;
+        width: 400px;
+        left: 4.5vw;
+        top: 3vw;
+        font-size: 15px;
+        text-transform: capitalize;
+        font-weight: bold;
 }  
 	
 .logo:hover {
@@ -85,13 +97,13 @@ nav li {
     }
 
 nav li:hover {
-	background: #e50914;
+	background: green;
 				cursor: pointer;
 }
 
 .container {
   display: flex;
-  padding: 0 55px;
+  padding: 0 35px;
 }
 
 .item {
@@ -205,8 +217,44 @@ body{
 					font-weight: 300;
 					color: white;
 					font-size: 30px;
-				}
-			
+        }
+        
+        *,*::after,*::before {
+          margin: 0;
+          padding: 0;
+          line-hieght: inherit;
+          box-sizing: border-box;
+        }
+        
+        html {
+         font-size: 62.5%;  
+        }
+        
+        body {
+          margin: 0;
+          padding: 25px;
+          line-height: 1.8;
+          background-color: #ff6b81;
+          font-family: 'Oswald', sans-serif;
+          font-size: 1rem;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+.card {
+  width: 85%;
+}
+        .card img {
+          height: 350px;
+          width: 450px;
+          float: right;
+          padding: 15px;
+        }
+
+        
+      
 
 
 

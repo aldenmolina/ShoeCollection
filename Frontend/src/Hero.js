@@ -4,9 +4,9 @@ import React, { Component } from 'react';
       render() {
         return(
             <div id="hero"  className="Hero" style={{backgroundImage: 'url(https://picserio.com/data/out/57/neon-3d-wallpapers_2799270.jpg)'}}>
-                <div className="content">                      
-                    <h1>I still have my feet on the ground, I just wear better shoes. ...</h1>
-                  </div>
+               <span> <img className="logo" src="https://i.pinimg.com/originals/d4/f5/93/d4f593edecbaa6ae8865f376b2d6d261.jpg" alt="main background"/>                   
+              <h1>I still have my feet on the ground, I just wear better shoes. ...</h1></span>
+ 
               </div>
         );
     }

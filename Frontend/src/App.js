@@ -3,7 +3,6 @@ import "./App.css";
 import InputText from "./InputText";
 import Shoes from "./Shoes";
 import Navigation from "./Navigation";
-import Logo from "./Logo";
 import Hero from "./Hero";
 
 
@@ -47,13 +46,16 @@ class App extends Component {
       <Shoes shoeBrands={item.shoeBrands} shoeTypeName={item.shoeTypeName} />
     ));
     return (
-        <div>
-            <header className = "Header">
-              <Logo />          
+        <div className = "main-container">
+            <header className = "header">
               <Navigation />
             </header>
-            
-             <Hero />
+            <div className = "main">
+              <Hero />
+            </div> 
+            <div className = "main-2">
+              {shoeList}
+            </div>                     
           
         {/* // <InputText
         //   shoeTypeName={this.state.shoeTypeName}
@@ -63,9 +65,7 @@ class App extends Component {
         //   setName={this.setName}
         //   setDescription={this.setDescription}
         // /> */}
-            <div>
-          {shoeList}
-          </div>
+
         </div>
     );
   }

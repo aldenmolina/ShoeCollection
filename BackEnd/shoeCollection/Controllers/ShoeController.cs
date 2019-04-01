@@ -19,6 +19,10 @@ namespace shoeCollection.Controllers
             this.shoeRepo = shoeRepo;
         }
 
+        public ShoeController(IShoeRepository repo)
+        {
+        }
+
         [HttpGet("{id}")]
         public ActionResult<Shoe> Get(int id)
         {

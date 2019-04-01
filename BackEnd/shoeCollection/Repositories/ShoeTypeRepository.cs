@@ -15,22 +15,9 @@ namespace shoeCollection.Repositories
             this.db = db;
         }
 
-        public ShoeType GetById(int id)
-        {
-            return db.ShoeTypes.Single(shoeType => shoeType.ShoeTypeId == id);
-        }
-
-        public void Create(ShoeType newShoeType)
-        {
-            db.ShoeTypes.Add(newShoeType);
-            db.SaveChanges();
-        }
-
         public List<ShoeType> GetAll()
         {
             return db.ShoeTypes.ToList();
-        }
-
-       
+        } 
     }
 }

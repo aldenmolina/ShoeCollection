@@ -20,7 +20,7 @@ namespace shoeCollection.Repositories
             db.SaveChanges();
         }
 
-        public Shoe GetById(int showId)
+        public Shoe GetById(int shoeId)
         {
             return db.Shoes.Single(shoe => shoe.ShoeId == shoeId);
         }

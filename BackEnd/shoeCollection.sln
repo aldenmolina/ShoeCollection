@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "shoeCollection", "shoeCollection\shoeCollection.csproj", "{180C126E-3A3E-40A9-928B-9BBEF78F6FC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shoeCollection.Tests", "shoeCollection.Tests\shoeCollection.Tests.csproj", "{35371DA5-9E0E-4B69-B3AC-18FE598ED839}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoeCollection.Tests", "shoeCollection.Tests\ShoeCollection.Tests.csproj", "{35371DA5-9E0E-4B69-B3AC-18FE598ED839}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

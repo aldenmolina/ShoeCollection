@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace shoeCollection.Repositories
 {
-    public class ShoeTypeRepository
+    public class ShoeTypeRepository : IShoeTypeRepository
     {
         private ShoeContext db;
 

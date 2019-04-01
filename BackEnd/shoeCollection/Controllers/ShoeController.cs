@@ -13,8 +13,8 @@ namespace shoeCollection.Controllers
     [ApiController]
     public class ShoeController : ControllerBase
     {
-        ShoeRepository shoeRepo;
-        public ShoeController(ShoeRepository shoeRepo)
+        IShoeRepository shoeRepo;
+        public ShoeController(IShoeRepository shoeRepo)
         {
             this.shoeRepo = shoeRepo;
         }

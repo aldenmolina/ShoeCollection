@@ -39,4 +39,3 @@ C:\Users\WeCanCodeIT\source\repos\ShoeCollection\BackEnd\shoeCollection\obj\Debu
 C:\Users\WeCanCodeIT\source\repos\ShoeCollection\BackEnd\shoeCollection\obj\Debug\netcoreapp2.1\shoeCollection.RazorTargetAssemblyInfo.cache
 C:\Users\WeCanCodeIT\source\repos\ShoeCollection\BackEnd\shoeCollection\obj\Debug\netcoreapp2.1\shoeCollection.dll
 C:\Users\WeCanCodeIT\source\repos\ShoeCollection\BackEnd\shoeCollection\obj\Debug\netcoreapp2.1\shoeCollection.pdb
-C:\Users\WeCanCodeIT\source\ShoeCollection\BackEnd\shoeCollection\obj\Debug\netcoreapp2.1\shoeCollection.csprojAssemblyReference.cache

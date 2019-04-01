@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace shoeCollection.Repositories
 {
-    public interface IShoeTypeRepository
+    public interface IShoeTypeRepository 
     {
         List<ShoeType> GetAll();
     }

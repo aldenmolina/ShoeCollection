@@ -22,28 +22,28 @@ class App extends Component {
       .then(json => this.setState({ shoes: json }));
   }
 
-  addNewShoe = shoeTypeId => {
-    const addedShoeType = {
-      shoeTypeId: shoeTypeId,
+  addNewShoe = newShoeTypeId => {
+    const newShoeType = {
+      shoeTypeId: newShoeTypeId,
       shoeName: this.state.shoeName,
       imagePath: this.state.imagePath,
       description: this.state.description
     };
-    fetch("https://localhost:44382/api/shoetype", {
+    fetch("https://localhost:44382/api/shoe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(addedShoeType)
+      body: JSON.stringify(newShoeType)
     }).then(res => {
       if (res.ok) {
-        const shoeTypeIndex = shoeTypeId - 1;
+        const shoeTypeIndex = newShoeTypeId - 1;
         const newShoes = [
           ...this.state.shoeType[shoeTypeIndex].shoeBrands,
-          addedShoeType
+          newShoeType
         ];
         const updateShoeType = this.state.shoeType[shoeTypeIndex];
-        updateShoeType.shoes = newShoes;
+        updateShoeType.shoeBrands = newShoes;
         const newShoeType = this.state.shoeType;
         newShoeType[shoeTypeIndex] = updateShoeType;
         this.setState({ shoeType: newShoeType });
@@ -100,6 +100,7 @@ class App extends Component {
   render() {
     const shoeList = this.state.shoes.map(item => (
       <Shoes
+        shoeType={item}
         shoeTypeId={item.shoeTypeId}
         shoeTypeName={item.shoeTypeName}
         shoeBrands={item.shoeBrands}

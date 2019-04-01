@@ -25,12 +25,5 @@ namespace shoeCollection.Controllers
         {
             return shoeTypeRepo.GetAll(); ;
         }
-
-        [HttpPost]
-        public ActionResult<bool> Post([FromBody] ShoeType shoeType)
-        {
-            shoeTypeRepo.Create(shoeType);
-            return true;
-        }
     }
 }

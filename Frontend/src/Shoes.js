@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import ShoeItem from "./ShoeItem";
 
 class Shoes extends Component {
+  addShoe = () => {
+    this.props.addNewShoe(this.props.shoeType.shoeTypeId);
+  };
   onShoeNameChange = e => {
     this.props.setShoeName(e.target.value);
   };
@@ -21,44 +24,52 @@ class Shoes extends Component {
     } = this.props;
     const shoeItems = shoeBrands.map(item => (
       <ShoeItem
+        shoe={item}
         shoeId={item.shoeId}
-        shoeTypeId={item.shoeTypeId}
         shoeName={item.shoeName}
         imagePath={item.imagePath}
         description={item.description}
         shoeNameText={shoeNameText}
+        onShoeNameChange={this.onShoeNameChange}
+        onImageChange={this.onImageChange}
+        onDescriptionChange={this.context}
       />
     ));
     return (
       <body>
         <div class="card">
           <h2>{shoeTypeName}</h2>
-
-          <div className={`add-form${this.props.shoeTypeId}`}>
-            Shoe Name:{" "}
-            <input
-              className={`add-name${this.props.shoeTypeId}`}
-              type="text"
-              value={shoeNameText}
-              onChange={this.onShoeNameChange}
-            />
-            Image URL:{" "}
-            <input
-              className={`add-form${this.props.shoeTypeId}`}
-              type="text"
-              value={imagePath}
-              onChange={this.onImageChange}
-            />
-            Description:{" "}
-            <input
-              className={`add-form${this.props.shoeTypeId}`}
-              type="text"
-              value={description}
-              onChange={this.onDescriptionChange}
-            />
-            <button>Add Shoes</button>
-          </div>
           <div>{shoeItems}</div>
+          <div className={`add-form${this.props.shoeTypeId}`}>
+            <div>
+              <label>Name: </label>
+              <input
+                className={`add-name${this.props.shoeTypeId}`}
+                type="text"
+                value={shoeNameText}
+                onChange={this.onShoeNameChange}
+              />
+            </div>
+            <div>
+              <label>Image URL:</label>
+              <input
+                className={`add-form${this.props.shoeTypeId}`}
+                type="text"
+                value={imagePath}
+                onChange={this.onImageChange}
+              />
+            </div>
+            <div>
+              <label>Description: </label>
+              <input
+                className={`add-form${this.props.shoeTypeId}`}
+                type="text"
+                value={description}
+                onChange={this.onDescriptionChange}
+              />
+            </div>
+            <button onClick={this.addShoe}>Add Shoes</button>
+          </div>
         </div>
       </body>
     );

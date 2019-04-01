@@ -35,8 +35,8 @@ namespace shoeCollection
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<ShoeContext>();
-            services.AddScoped<ShoeTypeRepository, ShoeTypeRepository>();
-            services.AddScoped<ShoeRepository, ShoeRepository>();
+            services.AddScoped<IShoeTypeRepository, ShoeTypeRepository>();
+            services.AddScoped<IShoeRepository, ShoeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

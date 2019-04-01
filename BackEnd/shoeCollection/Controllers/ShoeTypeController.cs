@@ -13,9 +13,9 @@ namespace shoeCollection.Controllers
     [ApiController]
     public class ShoeTypeController : ControllerBase
     {
-        public ShoeTypeRepository shoeTypeRepo;
+        IShoeTypeRepository shoeTypeRepo;
 
-        public ShoeTypeController(ShoeTypeRepository shoeTypeRepo)
+        public ShoeTypeController(IShoeTypeRepository shoeTypeRepo)
         {
             this.shoeTypeRepo = shoeTypeRepo;
         }

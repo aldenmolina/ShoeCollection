@@ -8,12 +8,14 @@ class Shoes extends Component {
       <ShoeItem shoeName={item.shoeName} imagePath={item.imagePath} description={item.description} />
     ));
     return (
-      <div>
-        <h2>{shoeTypeName}</h2>
+      <body>
+        <div class="card">
+         <h2>{shoeTypeName}</h2> 
         {shoeItems}
       </div>
-    );
-  }
-}
+      </body>
+        );
+      }
+    }
 
 export default Shoes;

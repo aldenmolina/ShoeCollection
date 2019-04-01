@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import "./App.css";
 import InputText from "./InputText";
 import Shoes from "./Shoes";
+import Navigation from "./Navigation";
+import Hero from "./Hero";
+
+
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {
+    this.state = {   
       shoeTypeName: [],
-      shoeName: [],
+      shoeName: [],   
       shoeDescription: "",
       shoes: []
     };
@@ -26,7 +30,9 @@ class App extends Component {
   setName = newName => {
     this.setState({ shoeName: newName });
   };
-
+  setImage = newImage => {
+    this.setState({ImagePath: newImage});
+  }
   setDescription = newDescription => {
     this.setState({ shoeDescription: newDescription });
   };
@@ -40,17 +46,27 @@ class App extends Component {
       <Shoes shoeBrands={item.shoeBrands} shoeTypeName={item.shoeTypeName} />
     ));
     return (
-      <div>
-        <InputText
-          shoeTypeName={this.state.shoeTypeName}
-          shoeBrandName={this.state.shoeBrandName}
-          shoeDescription={this.state.shoeDescription}
-          setTypeName={this.setTypeName}
-          setName={this.setName}
-          setDescription={this.setDescription}
-        />
-        {shoeList}
-      </div>
+        <div className = "main-container">
+            <header className = "header">
+              <Navigation />
+            </header>
+            <div className = "main">
+              <Hero />
+            </div> 
+            <div className = "main-2">
+              {shoeList}
+            </div>                     
+          
+        {/* // <InputText
+        //   shoeTypeName={this.state.shoeTypeName}
+        //   shoeBrandName={this.state.shoeBrandName}
+        //   shoeDescription={this.state.shoeDescription}
+        //   setTypeName={this.setTypeName}
+        //   setName={this.setName}
+        //   setDescription={this.setDescription}
+        // /> */}
+
+        </div>
     );
   }
 }

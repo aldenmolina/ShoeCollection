@@ -4,7 +4,7 @@ class ShoeItem extends Component {
   render() {
     const { shoeName, imagePath, description } = this.props;
     return (
-      <div>
+      <div className= "Item">
         <h4>{shoeName}</h4>
         <img src={imagePath} />
         <p>{description}</p>
@@ -14,3 +14,4 @@ class ShoeItem extends Component {
 }
 
 export default ShoeItem;
+

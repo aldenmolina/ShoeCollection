@@ -17,7 +17,6 @@ C:\Users\WeCanCodeIT\source\ShoeCollection\BackEnd\shoeCollection\bin\Debug\netc
 C:\Users\WeCanCodeIT\source\ShoeCollection\BackEnd\shoeCollection\bin\Debug\netcoreapp2.1\shoeCollection.runtimeconfig.dev.json
 C:\Users\WeCanCodeIT\source\ShoeCollection\BackEnd\shoeCollection\bin\Debug\netcoreapp2.1\shoeCollection.dll
 C:\Users\WeCanCodeIT\source\ShoeCollection\BackEnd\shoeCollection\bin\Debug\netcoreapp2.1\shoeCollection.pdb
-C:\Users\WeCanCodeIT\source\ShoeCollection\BackEnd\shoeCollection\obj\Debug\netcoreapp2.1\shoeCollection.csprojAssemblyReference.cache
 C:\Users\WeCanCodeIT\source\ShoeCollection\BackEnd\shoeCollection\obj\Debug\netcoreapp2.1\shoeCollection.csproj.CoreCompileInputs.cache
 C:\Users\WeCanCodeIT\source\ShoeCollection\BackEnd\shoeCollection\obj\Debug\netcoreapp2.1\shoeCollection.RazorAssemblyInfo.cache
 C:\Users\WeCanCodeIT\source\ShoeCollection\BackEnd\shoeCollection\obj\Debug\netcoreapp2.1\shoeCollection.RazorAssemblyInfo.cs

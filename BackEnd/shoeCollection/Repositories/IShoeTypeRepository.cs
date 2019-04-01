@@ -1,13 +1,11 @@
-﻿using shoeCollection.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace shoeCollection.Repositories
 {
-    public interface IShoeTypeRepository
+    public class IShoeTypeRepository
     {
-        List<Shoe> GetAll();
     }
 }

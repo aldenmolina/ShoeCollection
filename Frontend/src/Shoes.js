@@ -33,7 +33,7 @@ class Shoes extends Component {
         shoeNameText={shoeNameText}
         onShoeNameChange={this.onShoeNameChange}
         onImageChange={this.onImageChange}
-        onDescriptionChange={this.context}
+        onDescriptionChange={this.onDescriptionChange}
         updateShoe={this.props.updateShoe}
       />
     ));

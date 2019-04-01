@@ -24,7 +24,16 @@ class ShoeItem extends Component {
   };
 
   render() {
-    const { item, shoeId, shoeName, imagePath, description } = this.props;
+    const {
+      item,
+      shoeId,
+      shoeName,
+      imagePath,
+      description,
+      onShoeNameChange,
+      onDescriptionChange,
+      onImageChange
+    } = this.props;
     return (
       <div>
         <div className="Item">
@@ -38,7 +47,7 @@ class ShoeItem extends Component {
             <input
               type="text"
               value={this.props.shoeName}
-              onChange={this.props.onShoeNameChange}
+              onChange={onShoeNameChange}
             />
           </div>
           <div>
@@ -46,7 +55,7 @@ class ShoeItem extends Component {
             <input
               type="text"
               value={this.props.imagePath}
-              onChange={this.props.onImageChange}
+              onChange={onImageChange}
             />
           </div>
           <div>
@@ -54,7 +63,7 @@ class ShoeItem extends Component {
             <input
               type="text"
               value={this.props.description}
-              onChange={this.props.onDescriptionChange}
+              onChange={onDescriptionChange}
             />
           </div>
           <button onClick={this.onUpdateShoe}>Update</button>

@@ -41,8 +41,8 @@ namespace shoeCollection.Controllers
             return true;
         }
 
-        [HttpPost("{id}")]
-        public ActionResult<bool> Post(int id)
+        [HttpDelete("{id}")]
+        public ActionResult<bool> Delete(int id)
         {
             var show = shoeRepo.GetById(id);
             shoeRepo.Delete(show);

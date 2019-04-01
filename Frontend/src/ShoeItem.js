@@ -5,8 +5,26 @@ class ShoeItem extends Component {
     this.props.updateShoe(this.props.shoeId, this.props.shoeId);
   };
 
+  delete = shoeId => {
+    const url = "https://localhost:44382/api/shoe/" + shoeId;
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => {
+        if (res.ok) {
+          console.log("Shoe data deleted");
+        }
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+
   render() {
-    const { item, shoeName, imagePath, description } = this.props;
+    const { item, shoeId, shoeName, imagePath, description } = this.props;
     return (
       <div>
         <div className="Item">
@@ -40,6 +58,7 @@ class ShoeItem extends Component {
             />
           </div>
           <button onClick={this.onUpdateShoe}>Update</button>
+          <button onClick={() => this.delete(shoeId)}>Delete Shoe</button>
         </div>
       </div>
     );
